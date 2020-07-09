@@ -57,7 +57,9 @@ class NeoDB:
             session.run(
                 "MATCH(child: Company{id: $child_node}), (parent: Company{id: $parent_node}) "
                 "MERGE(child)-[:PARENT] -> (parent) "
-                "MERGE (child)<-[:CHILD]-(parent) ", parent_node=int(parent_node), child_node=int(child_node))
+                "MERGE (child)<-[:CHILD]-(parent) ",
+                parent_node=int(parent_node),
+                child_node=int(child_node))
 
     def _get_parent_node(self, node_id):
         with self.driver.session() as session:
