@@ -1,0 +1,29 @@
+version: "3"
+services:
+  db:
+    build: "./Neo4j"
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    networks:
+      - back
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7474/"]
+      interval: 30s
+      timeout: 30s
+      retries: 5
+  web:
+    build: .
+    depends_on:
+      - "db"
+    ports:
+      - "80:80"
+    volumes:
+      - ./app:/app
+    links:
+      - db:db
+    networks:
+      - back
+
+networks:
+  back:
