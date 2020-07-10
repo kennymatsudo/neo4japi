@@ -2,7 +2,7 @@
 """
 
 
-def get_node_descendants(db, node_id):
+def get_node_descendants(db, node_id: int):
     node_descendants = db.get_node_descendants(node_id)
     return {
         "data": {
