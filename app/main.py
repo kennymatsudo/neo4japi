@@ -15,7 +15,12 @@ db = NeoDB("bolt://db:7687", "neo4j", "password")
 
 @app.route("/")
 def main_route():
-    return "Hello World!"
+    return {
+        "get_all_nodes": "GET /nodes",
+        "get_node": "GET /nodes/:node_id",
+        "get_node_descendants": "GET /nodes/:node_id/descendants",
+        "change_parent_node": "PUT /nodes/:parent_node/parent/:child_node"
+    }
 
 
 @app.route("/nodes")
