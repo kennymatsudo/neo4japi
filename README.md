@@ -20,6 +20,12 @@ This will spin up three images, one containing the Python Flask application (exp
 
 **Note 2** In order to easily test the API's, an initial script is ran during the building of the Neo4j Docker container that populates the database. The data can be further manipulated by visiting localhost:7687.
 
+**Note 3** If the web docker fails to start up due to the latency of the database containers, this can be fixed using:
+
+```bash
+docker restart <container_id>
+```
+
 ## API
 
 ### Get descendants of all nodes
