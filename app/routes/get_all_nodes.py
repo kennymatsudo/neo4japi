@@ -1,6 +1,9 @@
+"""Module responsible for returning all nodes within the graph.
+"""
+
 
 def get_all_nodes(db):
     all_nodes = db.get_all()
     return {
-        "data": all_nodes
+        "data": [node['n'] for node in all_nodes]
     }
