@@ -2,7 +2,7 @@
 """
 
 
-def get_node(db, node_id: int):
+def get_node(db, node_id: int) -> dict:
     current_node = dict(db.get_node_info(node_id).get('n'))
     if current_node:
         parent_node = db.get_parent_node(node_id)
