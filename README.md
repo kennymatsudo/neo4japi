@@ -14,7 +14,7 @@ In order to deploy, please run:
 
 This will spin up three images, one containing the Python Flask application (exposing port 80) , a Neo4j graph database for data persistence (exposing port 7474), and a test Neo4j graph database to run tests against (exposting port 7475).
 
-![tree](https://raw.githubusercontent.com/kennymatsudo/tradeshift/master/doc/graph.png?token=AGIMRFGX4ALM3FZGCQBMYD27CEIBC)
+![tree](https://raw.githubusercontent.com/kennymatsudo/neo4japi/master/doc/graph.png)
 
 **Note 1** In this iteration, the web application container does not wait for the graph database table to be populated and will therefore show log messages. These can be ignored, and will eventually stop when the script within the database container runs and populates the initial tree.
 
