@@ -13,6 +13,11 @@ app = Flask(__name__)
 db = NeoDB("bolt://db:7687", "neo4j", "password")
 
 
+@app.route("/")
+def main_route():
+    return "Hello World!"
+
+
 @app.route("/nodes")
 def route_get_all_nodes():
     """ Returns all the nodes within the graph. """
