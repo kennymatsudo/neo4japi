@@ -12,7 +12,7 @@ In order to deploy, please run:
 > docker-compose up
 ```
 
-This will spin up two images, one containing the Python Flask application (exposing port 80) , and the other will contain a Neo4j graph database for data persistence (exposing port 7474).
+This will spin up three images, one containing the Python Flask application (exposing port 80) , a Neo4j graph database for data persistence (exposing port 7474), and a test Neo4j graph database to run tests against (exposting port 7475).
 
 ![tree](https://raw.githubusercontent.com/kennymatsudo/tradeshift/master/doc/graph.png?token=AGIMRFGX4ALM3FZGCQBMYD27CEIBC)
 
@@ -36,3 +36,13 @@ Changes the parent of the specified child node to the specified parent node.
 
 GET <http://localhost/nodes/{node_id}>
 Returns information about the specified node, including: node id, parent node, root node, and the height of the node.
+
+## Testing
+
+In order to run the tests, please run the following command from the root:
+
+```bash
+> pytest
+```
+
+This will run tests against the test database spun up in a seperate Docker container.
